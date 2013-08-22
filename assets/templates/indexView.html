@@ -1,0 +1,42 @@
+<div id="app-module-project-container">
+	<% if (projects){
+		var
+		count = 0;
+		%>
+		<% _.each(projects, function(project, projectIndex){ %>
+			<% if(project.images){ 
+				%>
+				<% _.each(project.images, function(image, imageIndex){ 
+					count++; 
+					%>
+					<div class="app-module-project" data-project-slug="<%= 'project/' + count - 1 + '/' + project.slug + '-' + (imageIndex + 1) %>" data-project-title="<%= project.title %>">
+						<div class="app-module-project-image-container">
+							<div class="app-module-project-image-overlay-mobile">
+								<div class="app-module-project-image-overlay">
+									<h2 class="app-module-project-title"><%= image.mx_description %></h2>
+								</div>
+							</div>
+							<img class="app-common-project-image" alt="<%= image.mx_description %>" src="<%= image.mx_image.sizes.app_mobile_med %>" data-img-count="<%= imageIndex + 1 %>" data-img-480="<%= image.mx_image.sizes.app_mobile_med %>" data-img-768="<%= image.mx_image.sizes.app_tablet_small %>" data-img-1024="<%= image.mx_image.sizes.app_tablet_med %>" data-img-1200="<%= image.mx_image.sizes.app_desktop_med %>" data-img-2000="<%= image.mx_image.sizes.app_desktop_large %>"/>	
+						</div>
+			    	</div>
+				<% }); %>
+		    <% } %>
+	    <% }); %>
+	<% } %>
+</div>
+<a id="app-module-thumbsNav-right" href="#" class="noHistory"></a>
+<a id="app-module-thumbsNav-left" href="#" class="noHistory"></a>
+<a id="app-module-thumbsTrigger" href="#app-module-thumbs" class="noHistory"></a>
+<% if (projects){%>
+	<div id="app-module-thumbsWrap">
+		<div id="app-module-thumb-scroll" class="cycle-pager external">
+			<% _.each(projects, function(project, projectIndex){ %>
+				<% if(project.images){%>
+					<% _.each(project.images, function(image, imageIndex){ %>
+						<img class="app-common-project-thumb" height="<%= image.mx_image.sizes['app_desktop_thumb-height'] %>" width="<%= image.mx_image.sizes['app_desktop_thumb-width'] %>" alt="<%= image.mx_description %>" src="<%= image.mx_image.sizes.app_desktop_thumb %>" data-project-count="<%= projectIndex + 1 %>" data-img-count="<%= imageIndex + 1 %>" />
+					<% }); %>
+				<% }; %>
+			<% }); %>
+		</div>
+	</div>
+<% } %>
