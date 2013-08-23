@@ -40,7 +40,7 @@
     */
     APP.config = {
 
-        paths :{,
+        paths :{
             templates : ''
         },
 

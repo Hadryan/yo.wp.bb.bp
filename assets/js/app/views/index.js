@@ -52,7 +52,7 @@
         */
         render:function (response) {
             
-            this.$el.html(this.template(response));
+            this.$el.html(this.template());
 
             return this;
         }

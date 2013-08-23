@@ -62,10 +62,8 @@
 	function api_get_latest_posts(){
 
 		// query array
-		$queryArray = array(,
-			'post_status' => 'publish',
-			'posts_per_page'=> '-1'
-			);
+		$queryArray = array(
+		);
 
 		$query = new WP_Query( $queryArray );
 
@@ -85,7 +83,7 @@
 		}
 
 		// return
-		return $array;
+		//return $array;
 	}
 
 ?>
