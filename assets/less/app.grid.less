@@ -1,0 +1,106 @@
+/*
+------------------------------------------------------------------
+	
+	- Document: app.grid.less
+	- Version:  1.0.0
+	- Client:   
+	- Author:   http://yojam.es 
+	- Started:	
+
+	* cutomised version of the sematic grid
+	* http://semantic.gs/
+
+------------------------------------------------------------------
+
+[ Table of Contents ]
+
+	- Config
+	- row
+	- column
+	- mixins
+	- helpers
+
+-------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+[ Config ]
+-------------------------------------------------------------------*/
+
+	@containerwidth:960;
+	@gutter: 18;
+	@columns: 12;
+	@column-width: ((@containerwidth - (@gutter * @columns)) / @columns ) * 1px ;
+
+
+/*------------------------------------------------------------------
+[ row ]
+-------------------------------------------------------------------*/
+	
+	.row(@columns:@columns) {
+		display: block;
+		width: @containerwidth*((@gutter + @containerwidth)/@containerwidth);
+		margin: 0 @containerwidth*((@gutter*.5)/@containerwidth) * 1px;
+		// *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
+		// *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
+		.clearfix();
+	}
+
+
+/*------------------------------------------------------------------
+[ column ]
+-------------------------------------------------------------------*/
+	
+	.column(@x,@columns:@columns){
+		min-height: 1px;
+		display: inline;
+		float: left;
+		width: @containerwidth*((((@gutter+@column-width)*@x)-@gutter) / @containerwidth) * 1px;
+		margin: 0 @containerwidth*((@gutter*.5)/@containerwidth) * 1px;
+	}
+
+	.push(@offset:1) {
+		margin-left: @containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	}
+
+	.pull(@offset:1) {
+		margin-right: @containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	}
+
+
+/*------------------------------------------------------------------
+[ mixins ]
+-------------------------------------------------------------------*/
+	
+	.container-full{
+		width:100%;
+		margin:0 auto;
+		.clearfix();
+		position: relative;
+	}
+
+	.container-full-padding{
+		width:90%;
+		margin:0 auto;
+		.clearfix();
+		position: relative;
+	}
+
+	.container{
+		width:@containerwidth * 1px;
+		margin:0 auto;
+		.clearfix();
+	}
+
+
+/*------------------------------------------------------------------
+[ helpers ]
+-------------------------------------------------------------------*/
+	
+	a img{ border:0}
+	figure{ position:relative}
+	figure img{ width:100%}
+	img {max-width: 100%; min-width:100%;width:100%;height:auto;vertical-align:bottom;}
+	object, embed {max-width:100%;min-width:100%;height:auto;}
+	img, object, embed {max-width: 100%;}
+	img {height: auto;}
