@@ -3,11 +3,29 @@
 
 	- Document: app.fonts.less
 	- Version:  1.0.0
-	- Client:   
 	- Author:   http://yojam.es
-	- markup:
-	- notes:
+
 
 ----------------------------------------------------------------------
-[ font face kits ]
+[ mixin ]
+----------------------------------------------------------------------*/
+	
+	/*
+	mixin
+	*/	
+	.font-face(@family:@fontFamily; @path:@fontPath; @weight:@fontWeight; @style:@fontStyle) {
+		@font-face {
+			font-family: @fontFamily;
+			src: url('@fontPath.eot');
+			src: url('@fontPath.eot?#iefix') format('embedded-opentype'),
+				 url('@fontPath.woff') format('woff'),
+				 url('@fontPath.ttf') format('truetype'),
+				 url('@fontPath.svg#@fontFamily') format('svg');
+			font-weight: @fontWeight;
+			font-style: @fontStyle;
+		}
+	}
+
+/*----------------------------------------------------------------------
+[ fonts ]
 ----------------------------------------------------------------------*/

@@ -3,12 +3,11 @@
 	
 	- Document: app.grid.less
 	- Version:  1.0.0
-	- Client:   
 	- Author:   http://yojam.es 
-	- Started:	
 
 	* cutomised version of the sematic grid
 	* http://semantic.gs/
+
 
 ------------------------------------------------------------------
 
@@ -65,6 +64,14 @@
 
 	.pull(@offset:1) {
 		margin-right: @containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	}
+
+	.negativePush(@offset:1){
+		margin-left: -@containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	}
+
+	.negativePull(@offset:1){
+		margin-right: -@containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
 	}
 
 
