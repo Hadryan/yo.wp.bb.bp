@@ -1,4 +1,4 @@
-/*
+/*!
  * Preboot v2
  *
  * Open sourced under MIT license by @mdo.
@@ -22,18 +22,14 @@
 @black-90:                 darken(#fff, 90%);
 
 // Brand colors
-@brand-primary:           #ff261d;
-@brand-primary-light:     #ff6161;
-@brand-primary-lighter:   #ffbbbb;
+@brand-primary:           #428bca;
 @brand-success:           #5cb85c;
 @brand-warning:           #f0ad4e;
 @brand-danger:            #d9534f;
 @brand-info:              #5bc0de;
 
-@white:                   #ffffff;
-
 // Scaffolding
-@body-background:         #f2f2f2;
+@body-background:         #fff;
 @text-color:              @black-50;
 
 // Links
@@ -41,15 +37,15 @@
 @link-color-hover:        darken(@link-color, 15%);
 
 // Typography
-@font-family-sans-serif:  "Graphik Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          100%;
-@font-size-large:         125%;//
-@font-size-small:         90%;
-@font-size-mini:          80%;
+@font-size-base:          14px;
+@font-size-large:         @font-size-base * 1.25; // ~18px
+@font-size-small:         @font-size-base * 0.85; // ~12px
+@font-size-mini:          @font-size-base * 0.75; // ~11px
 
 @line-height-base:        1.4;
 
@@ -60,21 +56,12 @@
 @input-color-placeholder: lighten(@text-color, 25%);
 
 // Grid
-// 1st party values
-@grid-padding:            14px;
-@grid-padding-large:      20px;
-
 // Used with the grid mixins below
-@grid-columns:            8;
-@grid-column-padding:     0; // Left and right inner padding
-@grid-float-breakpoint:   600px;
-@grid-desktop-breakpoint: 800px;
-@grid-large-breakpoint:   1024px;
+@grid-columns:          12;
+@grid-column-padding:   15px; // Left and right inner padding
+@grid-float-breakpoint: 768px;
 
-// Media Query Breakpoint Variables
-@tablet-up: ~"(min-width: 768px)";
-@desktop-up: ~"(min-width: 960px)";
-@beyond-desktop: ~"(min-width: 1281px)";
+
 
 //
 // Grid system

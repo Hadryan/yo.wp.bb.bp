@@ -5,113 +5,45 @@
 	- Version:  1.0.0
 	- Author:   http://yojam.es
 
-
-------------------------------------------------------------------
-
-[ Contents ]
-
-	- Vendor Imports
-	- 1st Party Variables
-	- 1st Party Mixins
-	- Typography /styling Resets
-	- Module Imports
-	- Page/Section Layout Imports
-	- Animation
-
--------------------------------------------------------------------*/
-
-
 /*------------------------------------------------------------------
-[ Vendor Imports ]
+[ Vendor ]
 -------------------------------------------------------------------*/
 	
-	/*
-	vendor
-	*/
 	@import "normalize.less";
 	@import "preboot.less";
 
 
 /*------------------------------------------------------------------
-[ 1st Party Variables & general config ]
+[ Variables ]
 -------------------------------------------------------------------*/
 	
-	/*
-	Breakpoints
-	*/
-	@app-tabletUp: ~"(min-width: 768px)";
-	@app-desktopUp: ~"(min-width: 960px)";
-	@app-beyondDesktop: ~"(min-width: 1281px)";
-	@app-max: ~"(min-width: 1401px)";
+	// Breakpoints
+	@apptabletUp: ~"(min-width: 768px)";
+	@appdesktopUp: ~"(min-width: 960px)";
+	@appbeyondDesktop: ~"(min-width: 1281px)";
+	@appmax: ~"(min-width: 1401px)";
 
-	/*
-	Font vars
-	*/
+	// Font vars
 	@baseFont: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-	/*
-	Typography / Grid
-	*/
+	// Typography / Grid
+	
 	@baseLineHeight: 18px;
 	@baseFontSize:   14px; 
 
-	/*
-	colours Hex
-	*/
-
+	// colours Hex
 	@appGrey: 	#F2F2F2;
 	@appBlack: 	#1a1a1a;
 	@appWhite: 	#ffffff;
 
-	/*
-	colours Rbga
-	*/
-
-
-	/*
-	Grid Settings
-	*/
-
-		/*------------------------------------------------------------------
-		Default mobile
-		-------------------------------------------------------------------*/
-
-		/*------------------------------------------------------------------
-		Tablet - 
-		-------------------------------------------------------------------*/
-
-		/*------------------------------------------------------------------
-		Desktop - 
-		-------------------------------------------------------------------*/
-
-		/*------------------------------------------------------------------
-		Large Desktop - 
-		-------------------------------------------------------------------*/
-
-		/*------------------------------------------------------------------
-		Max - 
-		-------------------------------------------------------------------*/
-
 
 /*------------------------------------------------------------------
-[ 1st Party Mixins ]
+[ Mixins ]
 -------------------------------------------------------------------*/
-	
-	/*
-	typography mixins 
-	*/
-	.app-baseFont(@font-size: @baseFontSize; @font-colour:@appWhite; @font-style: normal; @text-transform: none; @kerning: 0px; @lineHeight:@baseLineHeight){
-		font-family:@baseFont;
-		font-size:@font-size;
-		color:@font-colour;
-		font-style:@font-style;
-		text-transform: @text-transform;
-		letter-spacing: @kerning;
-	}
 
 
 /*------------------------------------------------------------------
-[ Typography & Styling Resets ]
+[ Typog resets ]
 -------------------------------------------------------------------*/
 	
 	*{
@@ -128,6 +60,9 @@
 		width: 100%;
 		font-family: @baseFont;
 		background-color: @appGrey;
+		-webkit-text-size-adjust: 100%; 
+		-ms-text-size-adjust: 100%;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
 
 		&.loading {
 		
@@ -165,83 +100,47 @@
 			list-style-type:none; 
 		}
 	}
+	
+	::selection {
+		background: @appBlack;
+		color: @appWhite;
+	}
 
-	/*------------------------------------------------------------------
-    Tablet - 
-    -------------------------------------------------------------------*/
-       
-        @media @app-tabletUp {
-        	
-        	html,
-			body{
-				overflow: hidden;
-				height: 100%;
-				width: 100%;
-			}
+	::-moz-selection {
+		background: @appBlack;
+		color: @appWhite;
+	}
 
-        }
+	img::selection {
+		background: transparent;
+	}
 
-
-   /*------------------------------------------------------------------
-    Desktop - 
-    -------------------------------------------------------------------*/
-        
-        @media @app-desktopUp{
-
-        }
-
-
-   /*------------------------------------------------------------------
-    Large Desktop -
-    -------------------------------------------------------------------*/
-        
-        @media @app-beyondDesktop{
-
-        }
-    
-    /*------------------------------------------------------------------
-    Max -  
-    -------------------------------------------------------------------*/
-    
-        @media @app-max{
-        }
+	img::-moz-selection {
+		background: transparent;
+	}
 
 
 /*------------------------------------------------------------------
-[ Common Imports ]
+[ Common ]
 -------------------------------------------------------------------*/
 	
-	/*
-	common
-	*/
 	@import "app.common.less";
 
 
 /*------------------------------------------------------------------
-[ Module Imports ]
+[ Module ]
 -------------------------------------------------------------------*/
-	
-	/*
-	modules
-	*/
 
 
 /*------------------------------------------------------------------
-[ Layout Imports ]
+[ Layout ]
 -------------------------------------------------------------------*/
-	
-	/*
-	layout
-	*/
 
 
 /*------------------------------------------------------------------
-[ Animation Imports ]
+[ Animation ]
 -------------------------------------------------------------------*/
 	
-	/*
-	easing
-	*/
 	@import "app.easing.less";
 	
 

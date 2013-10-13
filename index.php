@@ -41,7 +41,7 @@
 
 	<!--Old Browser	-->
  	<div id="app-layout-message">
-		<span class="app-layout-message-shit-browser">Sorry, but this website is desgiend to work in modern browsers, such as Google Chrome. Please upgrade your browser to view this site.</span>
+		<span class="app-layout-message-shit-browser">Sorry, but this website is designed to work in modern browsers, such as Google Chrome. Please upgrade your browser to view this site.</span>
 	</div>
 	
 	<!--Main-->

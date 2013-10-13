@@ -1,108 +1,89 @@
 /*
 ------------------------------------------------------------------
+    
+    - Document: app.grid.less
+    - Version:  1.0.0
+    - Author:   http://onedarnleyroad.com
 	
-	- Document: app.grid.less
-	- Version:  1.0.0
-	- Author:   http://yojam.es 
+	* forked version of http://framelessgrid.com by Joni Korpi
+	* http://jonikorpi.com/
+	* licensed under CC0 http://creativecommons.org/publicdomain/zero/1.0/
 
-	* cutomised version of the sematic grid
-	* http://semantic.gs/
-
-
-------------------------------------------------------------------
-
-[ Table of Contents ]
-
-	- Config
-	- row
-	- column
-	- mixins
-	- helpers
-
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
-[ Config ]
--------------------------------------------------------------------*/
-
-	@containerwidth:960;
-	@gutter: 18;
-	@columns: 12;
-	@column-width: ((@containerwidth - (@gutter * @columns)) / @columns ) * 1px ;
-
-
-/*------------------------------------------------------------------
-[ row ]
--------------------------------------------------------------------*/
+----------------------------------------------------------------------
+[ config ]
+----------------------------------------------------------------------*/
 	
-	.row(@columns:@columns) {
-		display: block;
-		width: @containerwidth*((@gutter + @containerwidth)/@containerwidth);
-		margin: 0 @containerwidth*((@gutter*.5)/@containerwidth) * 1px;
-		// *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
-		// *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
-		.clearfix();
-	}
+	/*
+	Your base font-size in pixels
+	*/
+	//@font-size:14;
 
+	/*
+	Shorthand for outputting ems, e.g. "12/@em"
+	*/	
+	//@em: @font-size*1em;	
 
-/*------------------------------------------------------------------
-[ column ]
--------------------------------------------------------------------*/
+	/*
+	The column-width of your grid in pixels
+	*/
+	@column: 60;
 	
-	.column(@x,@columns:@columns){
-		min-height: 1px;
-		display: inline;
-		float: left;
-		width: @containerwidth*((((@gutter+@column-width)*@x)-@gutter) / @containerwidth) * 1px;
-		margin: 0 @containerwidth*((@gutter*.5)/@containerwidth) * 1px;
+	/*
+	The gutter-width of your grid in pixels
+	*/
+	@gutter: 20;
+
+
+/*----------------------------------------------------------------------
+[ columns ]
+----------------------------------------------------------------------*/
+
+	 @1cols: ( 1 * (@column + @gutter) - @gutter) * 1px; @1col: @1cols;
+	 @2cols: ( 2 * (@column + @gutter) - @gutter) * 1px;
+	 @3cols: ( 3 * (@column + @gutter) - @gutter) * 1px;
+	 @4cols: ( 4 * (@column + @gutter) - @gutter) * 1px;
+	 @5cols: ( 5 * (@column + @gutter) - @gutter) * 1px;
+	 @6cols: ( 6 * (@column + @gutter) - @gutter) * 1px;
+	 @7cols: ( 7 * (@column + @gutter) - @gutter) * 1px;
+	 @8cols: ( 8 * (@column + @gutter) - @gutter) * 1px;
+	 @9cols: ( 9 * (@column + @gutter) - @gutter) * 1px;
+	@10cols: (10 * (@column + @gutter) - @gutter) * 1px;
+	@11cols: (11 * (@column + @gutter) - @gutter) * 1px;
+	@12cols: (12 * (@column + @gutter) - @gutter) * 1px;
+	@13cols: (13 * (@column + @gutter) - @gutter) * 1px;
+	@14cols: (14 * (@column + @gutter) - @gutter) * 1px;
+	@15cols: (15 * (@column + @gutter) - @gutter) * 1px;
+	@16cols: (16 * (@column + @gutter) - @gutter) * 1px;
+
+	//colum width
+	.gridColumnWidth(@cols:1){
+		width: (@cols * (@column + @gutter) - @gutter) * 1px;
 	}
 
-	.push(@offset:1) {
-		margin-left: @containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	//push
+	.gridColumnPush(@cols:1){
+		margin-left: (@cols * (@column + @gutter) - @gutter) * 1px;
 	}
 
-	.pull(@offset:1) {
-		margin-right: @containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	//negative push
+	.gridColumnPushNeg(@cols:1){
+		margin-left: - (@cols * (@column + @gutter) - @gutter) * 1px;
 	}
 
-	.negativePush(@offset:1){
-		margin-left: -@containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
+	//pull 
+	.gridColumnPull(@cols:1){
+		margin-right: (@cols * (@column + @gutter) - @gutter) * 1px;
 	}
 
-	.negativePull(@offset:1){
-		margin-right: -@containerwidth*(((@gutter+@column-width)*@offset) / @containerwidth) + @containerwidth*((@gutter*.5)/@containerwidth);
-	}
-
-
-/*------------------------------------------------------------------
-[ mixins ]
--------------------------------------------------------------------*/
-	
-	.container-full{
-		width:100%;
-		margin:0 auto;
-		.clearfix();
-		position: relative;
-	}
-
-	.container-full-padding{
-		width:90%;
-		margin:0 auto;
-		.clearfix();
-		position: relative;
-	}
-
-	.container{
-		width:@containerwidth * 1px;
-		margin:0 auto;
-		.clearfix();
+	//negative pull
+	.gridColumnPullNeg(@cols:1){
+		margin-right: - (@cols * (@column + @gutter) - @gutter) * 1px;
 	}
 
 
-/*------------------------------------------------------------------
+/*----------------------------------------------------------------------
 [ helpers ]
--------------------------------------------------------------------*/
+----------------------------------------------------------------------*/
 	
 	a img{ border:0}
 	figure{ position:relative}
@@ -111,3 +92,4 @@
 	object, embed {max-width:100%;min-width:100%;height:auto;}
 	img, object, embed {max-width: 100%;}
 	img {height: auto;}
+

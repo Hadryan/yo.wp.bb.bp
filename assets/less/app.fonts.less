@@ -5,26 +5,23 @@
 	- Version:  1.0.0
 	- Author:   http://yojam.es
 
-
 ----------------------------------------------------------------------
 [ mixin ]
 ----------------------------------------------------------------------*/
 	
-	/*
-	mixin
-	*/	
-	.font-face(@family:@fontFamily; @path:@fontPath; @weight:@fontWeight; @style:@fontStyle) {
+	.font-face( @family, @path, @weight, @style ) {
 		@font-face {
-			font-family: @fontFamily;
-			src: url('@fontPath.eot');
-			src: url('@fontPath.eot?#iefix') format('embedded-opentype'),
-				 url('@fontPath.woff') format('woff'),
-				 url('@fontPath.ttf') format('truetype'),
-				 url('@fontPath.svg#@fontFamily') format('svg');
-			font-weight: @fontWeight;
-			font-style: @fontStyle;
+			font-family:  @family;
+			src: url('@{path}.eot');
+			src: url('@{path}.eot?#iefix') format('embedded-opentype'),
+				 url('@{path}.woff') format('woff'),
+				 url('@{path}.ttf') format('truetype'),
+				 url('@{path}.svg#@fontFamily') format('svg');
+			font-weight: @weight;
+			font-style: @style;
 		}
 	}
+	
 
 /*----------------------------------------------------------------------
 [ fonts ]

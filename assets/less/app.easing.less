@@ -8,23 +8,18 @@
     * made with http://matthewlein.com/ceaser/
     * http://easings.net/
 
-
 ----------------------------------------------------------------------
 [ vars ] 
 ----------------------------------------------------------------------*/
 
-    /*
-    default css
-    */
+    // default css
     @linear         :linear;
     @ease           :ease;
     @ease-in        :ease-in;
     @ease-out       :ease-out;
     @ease-in-out    :ease-in-out;
 
-    /*
-    Beziers
-    */
+    // Beziers
     @easeInQuad     :cubic-bezier(0.550, 0.085, 0.680, 0.530);
     @easeInCubic    :cubic-bezier(0.550, 0.055, 0.675, 0.190);
     @easeInQuart    :cubic-bezier(0.895, 0.030, 0.685, 0.220);
@@ -53,12 +48,9 @@
 
 
 /*----------------------------------------------------------------------
-[ vars ] 
+[ defaults ] 
 ----------------------------------------------------------------------*/
     
-    /*
-    defaults
-    */
     @app-default-duration : 100ms;
     @app-default-easing   : @linear;
 
@@ -67,12 +59,6 @@
 [ mixin ] 
 ----------------------------------------------------------------------*/
     
-    /*
-    * @desc : transition mixin
-    * @usage : .app-transition(duration:easing);
-    * @reference : 
-    * @notes : 
-    */  
     .app-transition( @duration: @app-default-duration; @easing: @app-default-easing ){
         -webkit-transition: all @duration @easing;
            -moz-transition: all @duration @easing;
@@ -80,3 +66,5 @@
              -o-transition: all @duration @easing;
                 transition: all @duration @easing;
     }
+
+    
